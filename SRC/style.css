@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(84, 173, 247);
+    /* text-align:center; */
+
+}
+
+
+.start-btn{
+    font-family: monospace;
+    font-size: 50px;
+
+    position: absolute;
+    top: 25%;
+    left:50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); 
+
+
+    padding-left: 100px;
+    padding-top: 40px;
+    padding-right: 100px;
+    padding-bottom: 40px;
+    background-color: greenyellow;
+    border: 50px solid rgb(179, 248, 173)
+    
+}
+
+.start-btn:hover{
+    color:gray;
+    cursor: pointer;
+    background-color: azure;
+}
