@@ -1,32 +1,51 @@
-body{
-    background-color: rgb(84, 173, 247);
-    /* text-align:center; */
+body {
+margin: 0;
 
 }
 
+#startup{
 
-.start-btn{
-    font-family: monospace;
-    font-size: 50px;
+    background-image: url("images/Startup.jpg");
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 625px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+#gameScreen{
+    background-image: url("images/GameBackground.jpg");
 
-    position: absolute;
-    top: 25%;
-    left:50%;
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%); 
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 625px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.start-btn {
+  font-family: monospace;
+  font-size: 50px;
 
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    padding-left: 100px;
-    padding-top: 40px;
-    padding-right: 100px;
-    padding-bottom: 40px;
-    background-color: greenyellow;
-    border: 50px solid rgb(179, 248, 173)
-    
+  padding-left: 100px;
+  padding-top: 40px;
+  padding-right: 100px;
+  padding-bottom: 40px;
+  background-color: greenyellow;
+  /* border: 50px solid rgb(134, 128, 190) */
 }
 
-.start-btn:hover{
-    color:gray;
-    cursor: pointer;
-    background-color: azure;
+.start-btn:hover {
+  color: gray;
+  cursor: pointer;
+  background-color: azure;
+}
+
+.hide{
+    /* background-color: white; */
+    display:none;
 }
