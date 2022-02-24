@@ -3,24 +3,30 @@ margin: 0;
 
 }
 
-#startup{
+.startup{
+  /* background-color: #cccccc;  */
+
 
     background-image: url("images/Startup.jpg");
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 625px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: #cccccc; 
+    height: 625px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
-#gameScreen{
+.gameScreen{
+  /* background-color: #08f5fd; 
+  width: 1365px;
+  height: 625px; */
+
     background-image: url("images/GameBackground.jpg");
 
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 625px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-}
+    background-color: #cccccc; 
+    height: 625px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+} 
 .start-btn {
   font-family: monospace;
   font-size: 50px;
@@ -48,4 +54,8 @@ margin: 0;
 .hide{
     /* background-color: white; */
     display:none;
+}
+.wizard{
+  background-image: url("images/wizard.png");
+  position: relative;
 }
