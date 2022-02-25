@@ -12,8 +12,8 @@ function gameObject(){
             wizardEl.classList.add(`wizard`)
             wizardEl.style.height = gameState.height + `px`
             wizardEl.style.width = gameState.width + `px`
-            wizardEl.style.left = gameState.startX + `px`
-            wizardEl.style.top = gameState.startY + `px`
+            wizardEl.style.left = gameState.posX + `px`
+            wizardEl.style.top = gameState.posY + `px`
 
             gameScreen.appendChild(wizardEl)
 
