@@ -6,6 +6,14 @@ function start(state,game){
 }
 
 function gameLoop(state, game, timestamp) {
+    if (state.keys.Space) {
+        game.wizardEl.style.backgroundImage = `url("images/wizard-fire.png")`
+        game.createFireball(state.wizard, state.createFireball)
+    }else{
+        game.wizardEl.style.backgroundImage = `url("images/wizard.png")`
+
+    }
+
     if (state.keys.KeyD === true ) {
         state.wizard.posX = Math.min(state.wizard.posX + state.wizard.speed, game.gameScreen.offsetWidth - state.wizard.width)
       
@@ -31,6 +39,16 @@ document.querySelectorAll(`.bugs`).forEach(bug =>{
         
     }else {
         bug.remove()
+    }
+})
+document.querySelectorAll(`.ball`).forEach(bal =>{
+    let posX = parseInt(bal.style.left)
+    if (posX > game.gameScreen.offsetWidth ) {
+        bal.remove()
+        
+    }else {
+    bal.style.left = posX + state.createFireball.speed + `px`
+
     }
 })
 

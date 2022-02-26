@@ -29,6 +29,17 @@ function gameObject(){
             bugEl.style.top = Math.floor(Math.random() * gameScreen.offsetHeight - bugStats.height) + `px`
 
             gameScreen.appendChild(bugEl)
+        },
+        createFireball(wizard, fireball){
+            let fireBall = document.createElement(`div`);
+            fireBall.classList.add(`ball`);
+            fireBall.style.height = fireball.height + `px`
+            fireBall.style.width = fireball.width + `px`
+            fireBall.style.left = wizard.posX + wizard.width + `px`
+            fireBall.style.top = wizard.posY +( wizard.height/2.5) + `px`
+
+            gameScreen.appendChild(fireBall)
+            
         }
     }
 

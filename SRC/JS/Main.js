@@ -6,7 +6,8 @@ document.addEventListener(`keydown`, (e) => {
     e.code == `KeyA` ||
     e.code == `KeyW` ||
     e.code == `KeyS` ||
-    e.code == `KeyD`
+    e.code == `KeyD` ||
+    e.code ==  `Space`
   ) {
     state.keys[e.code] = true;
 
@@ -17,7 +18,8 @@ document.addEventListener(`keyup`, (e) => {
     e.code == `KeyA` ||
     e.code == `KeyW` ||
     e.code == `KeyS` ||
-    e.code == `KeyD`
+    e.code == `KeyD` ||
+    e.code == `Space`
   ) {
     state.keys[e.code] = false;
   }

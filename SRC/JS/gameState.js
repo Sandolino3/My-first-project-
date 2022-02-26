@@ -17,6 +17,11 @@ function gameState(){
         bugTimestamp: 0,
         spawnTime: 1500, 
         bugSpeed: 10,
+     },
+     createFireball:{
+        width: 20,
+        height: 20,
+        speed: 10,
      }
 
     }
