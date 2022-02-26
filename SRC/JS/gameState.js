@@ -16,6 +16,7 @@ function gameState(){
         height: 50, 
         bugTimestamp: 0,
         spawnTime: 1500, 
+        bugSpeed: 10,
      }
 
     }

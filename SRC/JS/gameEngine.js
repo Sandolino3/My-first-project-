@@ -24,6 +24,11 @@ if (timestamp > state.bugStats.bugTimestamp) {
     state.bugStats.bugTimestamp = timestamp + Math.random() * state.bugStats.spawnTime
 }
 
+document.querySelectorAll(`.bugs`).forEach(bug =>{
+    let posX = parseInt(bug.style.left)
+    bug.style.left = posX - state.bugStats.bugSpeed + `px`
+})
+
     game.wizardEl.style.left = state.wizard.posX + `px`
     game.wizardEl.style.top = state.wizard.posY + `px`
     
