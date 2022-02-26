@@ -26,7 +26,12 @@ if (timestamp > state.bugStats.bugTimestamp) {
 
 document.querySelectorAll(`.bugs`).forEach(bug =>{
     let posX = parseInt(bug.style.left)
+    if (posX > 0 ) {
     bug.style.left = posX - state.bugStats.bugSpeed + `px`
+        
+    }else {
+        bug.remove()
+    }
 })
 
     game.wizardEl.style.left = state.wizard.posX + `px`
