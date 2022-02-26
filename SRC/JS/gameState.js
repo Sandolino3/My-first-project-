@@ -8,8 +8,16 @@ function gameState(){
         height: 100,
         posX: startX,
         posY: startY,
+        speed: 10,
      },
-     keys:[]
+     keys:[],
+     bugStats:{
+        width: 50,
+        height: 50, 
+        bugTimestamp: 0,
+        spawnTime: 1500, 
+     }
+
     }
     return state
 

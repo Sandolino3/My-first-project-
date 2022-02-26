@@ -22,7 +22,7 @@ margin: 0;
     background-image: url("images/GameBackground.jpg");
 
     background-color: #cccccc; 
-    height: 625px; 
+    height: 600px; 
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
@@ -58,4 +58,11 @@ margin: 0;
 .wizard{
   background-image: url("images/wizard.png");
   position: relative;
+}
+
+.bugs{
+  background-image: url("images/bug.png");
+  background-color: none;
+  position: absolute;
+  display:inline;
 }

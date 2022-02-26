@@ -19,6 +19,16 @@ function gameObject(){
 
             this.wizardEl = wizardEl;
             return wizardEl
+        },
+        createBug(bugStats){
+            let bugEl = document.createElement(`div`)
+            bugEl.classList.add(`bugs`)
+            bugEl.style.height = bugStats.height + `px`
+            bugEl.style.width = bugStats.width + `px`
+            bugEl.style.left = gameScreen.offsetWidth - bugStats.width + `px`
+            bugEl.style.top = Math.floor(Math.random() * gameScreen.offsetHeight - bugStats.height) + `px`
+
+            gameScreen.appendChild(bugEl)
         }
     }
 
