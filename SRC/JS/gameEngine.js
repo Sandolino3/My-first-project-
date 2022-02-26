@@ -31,8 +31,8 @@ if (timestamp > state.bugStats.bugTimestamp) {
     game.createBug(state.bugStats)
     state.bugStats.bugTimestamp = timestamp + Math.random() * state.bugStats.spawnTime
 }
-
-document.querySelectorAll(`.bugs`).forEach(bug =>{
+let bugElements = document.querySelectorAll(`.bugs`)
+bugElements.forEach(bug =>{
     let posX = parseInt(bug.style.left)
     if (posX > 0 ) {
     bug.style.left = posX - state.bugStats.bugSpeed + `px`
@@ -43,6 +43,13 @@ document.querySelectorAll(`.bugs`).forEach(bug =>{
 })
 document.querySelectorAll(`.ball`).forEach(bal =>{
     let posX = parseInt(bal.style.left)
+    
+    bugElements.forEach(bug =>{
+        if (detectColision(bug, bal)) {
+             bug.remove();
+             bal.remove();
+        }
+    })
     if (posX > game.gameScreen.offsetWidth ) {
         bal.remove()
         
@@ -50,6 +57,7 @@ document.querySelectorAll(`.ball`).forEach(bal =>{
     bal.style.left = posX + state.createFireball.speed + `px`
 
     }
+
 })
 
     game.wizardEl.style.left = state.wizard.posX + `px`
@@ -59,4 +67,11 @@ document.querySelectorAll(`.ball`).forEach(bal =>{
     
  window.requestAnimationFrame(gameLoop.bind(null, state,game))
 
+}
+
+function detectColision(obj1, obj2){
+let first = obj1.getBoundingClientRect();
+let second = obj2.getBoundingClientRect();
+let colision = !(first.top > second.bottom || first.bottom < second.top || first.left > second.right || first.right < second.left )
+return colision
 }
