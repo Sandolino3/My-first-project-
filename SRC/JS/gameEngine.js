@@ -7,8 +7,12 @@ function start(state,game){
 
 function gameLoop(state, game, timestamp) {
     if (state.keys.Space) {
+
         game.wizardEl.style.backgroundImage = `url("images/wizard-fire.png")`
-        game.createFireball(state.wizard, state.createFireball)
+        if(timestamp > state.createFireball.cd){
+            game.createFireball(state.wizard, state.createFireball)
+            state.createFireball.cd = timestamp +  state.createFireball.spownInterval
+        }
     }else{
         game.wizardEl.style.backgroundImage = `url("images/wizard.png")`
 
@@ -32,8 +36,13 @@ if (timestamp > state.bugStats.bugTimestamp) {
     state.bugStats.bugTimestamp = timestamp + Math.random() * state.bugStats.spawnTime
 }
 let bugElements = document.querySelectorAll(`.bugs`)
+let wEl = document.querySelector(`.wizard`)
+
 bugElements.forEach(bug =>{
     let posX = parseInt(bug.style.left)
+    if (detectColision(wEl, bug)) {
+      state.gameOver = true  
+    }
     if (posX > 0 ) {
     bug.style.left = posX - state.bugStats.bugSpeed + `px`
         
@@ -43,7 +52,7 @@ bugElements.forEach(bug =>{
 })
 document.querySelectorAll(`.ball`).forEach(bal =>{
     let posX = parseInt(bal.style.left)
-    
+
     bugElements.forEach(bug =>{
         if (detectColision(bug, bal)) {
              bug.remove();
@@ -64,8 +73,12 @@ document.querySelectorAll(`.ball`).forEach(bal =>{
     game.wizardEl.style.top = state.wizard.posY + `px`
     
 
-    
- window.requestAnimationFrame(gameLoop.bind(null, state,game))
+    if (state.gameOver) {
+       alert(`Game Over`) 
+    }else{
+        window.requestAnimationFrame(gameLoop.bind(null, state,game))
+    }
+
 
 }
 

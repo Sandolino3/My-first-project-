@@ -3,6 +3,7 @@ let startY = Math.random()*600
 function gameState(){
     const state = {
      player: `Sanduka`,
+     gameOver: false,
      wizard: {
         width: 82,
         height: 100,
@@ -22,6 +23,8 @@ function gameState(){
         width: 20,
         height: 20,
         speed: 10,
+        cd:0,
+        spownInterval: 350,
      }
 
     }
