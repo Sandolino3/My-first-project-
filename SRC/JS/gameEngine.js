@@ -72,13 +72,20 @@ document.querySelectorAll(`.ball`).forEach(bal =>{
     game.wizardEl.style.left = state.wizard.posX + `px`
     game.wizardEl.style.top = state.wizard.posY + `px`
     
-
+    let gameOver = document.getElementById(`gameOver`)
     if (state.gameOver) {
-       alert(`Game Over`) 
+      gameOver.classList.remove(`hide`)
+    window.cancelAnimationFrame() 
+
     }else{
         window.requestAnimationFrame(gameLoop.bind(null, state,game))
+
     }
 
+    gameOver.addEventListener(`click`, ()=>{
+        window.location.reload();
+
+    })
 
 }
 
@@ -88,3 +95,4 @@ let second = obj2.getBoundingClientRect();
 let colision = !(first.top > second.bottom || first.bottom < second.top || first.left > second.right || first.right < second.left )
 return colision
 }
+

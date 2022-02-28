@@ -76,3 +76,14 @@ overflow: hidden;
   background-size: cover;
 
 }
+
+#gameOver{
+  position: absolute;
+  font-family: monospace;
+  font-size: 100px;
+  top: 30%;
+  left: 30%;
+}
+#gameOver:hover {
+  cursor: pointer;
+}

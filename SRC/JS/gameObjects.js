@@ -3,6 +3,8 @@ function gameObject(){
     let startDiv = document.querySelector(`.startup`)
     let gameScreen = document.querySelector(`.gameScreen`)
 
+
+
     return{
         startButton,
         startDiv,
